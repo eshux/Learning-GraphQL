@@ -10,7 +10,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
-  uri: 'https://48p1r2roz4.sse.codesandbox.io',
+  // uri: 'https://48p1r2roz4.sse.codesandbox.io', // exchange rates
+  uri: 'https://71z1g.sse.codesandbox.io/', // dogs
   cache: new InMemoryCache()
 });
 

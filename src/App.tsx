@@ -1,28 +1,37 @@
-import { useQuery } from '@apollo/client';
-import React, { FC } from 'react';
+import React from 'react';
 import './App.css';
-import Card from './components/Card/Card';
-import { EXCHANGE_RATES } from './queries/ExchangeRates';
-import { ExchangeRatesType } from './types/ExchangeRates';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+import Home from './pages/Home';
+import Queries from './pages/Queries';
 
-const App:FC = () => {
-  const { loading, error, data } = useQuery<ExchangeRatesType>(EXCHANGE_RATES);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Learning GraphQL
-        </p>
-        {data && data.rates.map(({ currency, rate }) => (
-          <Card key={currency} text={`${currency}: ${rate}`} />
-        ))}
-      </header>
+const App = () => (
+  <Router>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/queries">Queries</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route path="/queries">
+          <Queries />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
-  );
-};
+  </Router>
+);
 
 export default App;
