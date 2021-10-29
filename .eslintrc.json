@@ -52,7 +52,9 @@
         "import/prefer-default-export": "off",
         "allowTypedFunctionExpressions": "off",
         "comma-dangle": "off",
-        "react/jsx-one-expression-per-line": "off"
+        "react/jsx-one-expression-per-line": "off",
+        "react/require-default-props": "off",
+        "object-curly-newline": "off"
     },
     "settings": {
         "import/resolver": {
