@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.header {
+	display: flex;
+	flex-direction: column;
+	background-color: $secondary-main;
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	font-family: monospace;
+	padding-bottom: 8px;
+}
+
+.navItem {
+	margin: 8px;
+	text-decoration: none;
+	color: $secondary-light;
+	font-size: 22px;
+}
+
+.title {
+	text-align: center;
+	font-size: 48px;
+	letter-spacing: 4px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: $white;
+}
+
+.active {
+	color: $secondary-dark;
+}

@@ -1,36 +1,30 @@
 import React from 'react';
-import './App.css';
+import './styles/main.scss';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import Home from './pages/Home';
 import Queries from './pages/Queries';
+import Header from './components/Header/Header';
+import Mutations from './pages/Mutations';
 
 const App = () => (
   <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/queries">Queries</Link>
-          </li>
-        </ul>
-      </nav>
-      <Switch>
-        <Route path="/queries">
-          <Queries />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </div>
+    <Header />
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/queries">
+        <Queries />
+      </Route>
+      <Route path="/mutations">
+        <Mutations />
+      </Route>
+    </Switch>
+
   </Router>
 );
 

@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import React, { FC } from 'react';
 import { GET_DOG_PHOTO } from '../../queries/dogPhoto';
 import { DogsType } from '../../types/Dogs';
+import Button from '../Button/Button';
 
 type Props = {
   breed: string;
@@ -15,18 +16,19 @@ const DogPhoto:FC<Props> = ({ breed }) => {
     // pollInterval: 500, // polling every half second ( latest data )
   });
 
-  if (loading) return <span>Loading</span>;
-  if (error) return <span>Error! {error} </span>;
+  if (loading) return <span> loading...</span>;
+  if (error) return <span> Error! :( </span>;
 
   return (
-    <>
+    <div className="flex-align-center flex-column">
       <img
         src={data && data.dog.displayImage}
         alt="dog-img"
-        style={{ maxWidth: 600, margin: '20px' }}
+        style={{ maxWidth: 400 }}
+        className="mb-16"
       />
-      <button type="button" onClick={() => refetch()}>Refetch!</button>
-    </>
+      <Button onClick={() => refetch()}>Refetch!</Button>
+    </div>
   );
 };
 
