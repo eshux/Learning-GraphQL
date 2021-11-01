@@ -28,6 +28,13 @@ const Header:FC = () => (
       >
         Mutations
       </NavLink>
+      <NavLink
+        className={styles.navItem}
+        activeClassName={styles.active}
+        to="/refetching"
+      >
+        Refetching
+      </NavLink>
     </nav>
   </header>
 );

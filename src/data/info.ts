@@ -11,5 +11,6 @@ export const info = {
   useMutationPoints: [
     'Refetching Queries (refetching the query after mutation - like we are doing here)',
     'Updating cache directly (more complex, but avoids refetching and making another call to server)'
-  ]
+  ],
+  refetchQueries: 'It is also possible to refetch all the queries whose cache have been modified with updateCache callback.'
 };

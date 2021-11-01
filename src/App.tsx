@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Queries from './pages/Queries';
 import Header from './components/Header/Header';
 import Mutations from './pages/Mutations';
+import Refetching from './pages/Refetching';
 
 const client = new ApolloClient({
   uri: 'https://71z1g.sse.codesandbox.io/', // dogs
@@ -36,6 +37,11 @@ const App = () => (
       <Route path="/mutations">
         <ApolloProvider client={clientMutation}>
           <Mutations />
+        </ApolloProvider>
+      </Route>
+      <Route path="/refetching">
+        <ApolloProvider client={client}>
+          <Refetching client={client} />
         </ApolloProvider>
       </Route>
     </Switch>

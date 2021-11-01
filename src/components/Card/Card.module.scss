@@ -1,7 +1,8 @@
+@import '../../styles/variables.scss';
+
 .card {
-  padding: 4px 6px;
-  background-color: beige;
-  font-family: monospace;
-  margin: 4px;
-  color: black;
+  padding: 8px 12px;
+  background-color: $secondary-light;
+  margin-bottom: 4px;
+  color: $white;
 }

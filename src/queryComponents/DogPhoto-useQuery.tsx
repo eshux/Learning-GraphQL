@@ -1,4 +1,4 @@
-import { NetworkStatus, useQuery } from '@apollo/client';
+import { DocumentNode, NetworkStatus, useQuery } from '@apollo/client';
 import React, { FC } from 'react';
 import { GET_DOG_PHOTO } from '../queries/getDogPhoto';
 import { DogsType } from '../types/Dogs';
@@ -6,19 +6,21 @@ import Button from '../components/Button/Button';
 
 type Props = {
   breed: string;
+  query?: DocumentNode;
+  hideButton?: boolean;
 }
 
-const DogPhoto:FC<Props> = ({ breed }) => {
+const DogPhoto:FC<Props> = ({ breed, query, hideButton }) => {
   const {
     loading, error, data, refetch, networkStatus
-  } = useQuery<DogsType>(GET_DOG_PHOTO, {
+  } = useQuery<DogsType>(query || GET_DOG_PHOTO, {
     variables: { breed },
     notifyOnNetworkStatusChange: true
     // pollInterval: 500, // polling every half second ( latest data )
   });
 
   if (networkStatus === NetworkStatus.refetch) return <span>Refetching...</span>;
-  if (loading) return <span> loading...</span>;
+  if (loading) return <span> Loading...</span>;
   if (error) return <span> Error! :( </span>;
 
   return (
@@ -32,7 +34,7 @@ const DogPhoto:FC<Props> = ({ breed }) => {
           className="mb-16"
         />
         )}
-      <Button onClick={() => refetch()}>Refetch!</Button>
+      {!hideButton && <Button onClick={() => refetch()}>Refetch!</Button> }
     </div>
   );
 };
