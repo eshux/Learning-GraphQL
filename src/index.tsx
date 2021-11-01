@@ -1,24 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider
-} from '@apollo/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const client = new ApolloClient({
-  // uri: 'https://48p1r2roz4.sse.codesandbox.io', // exchange rates
-  uri: 'https://71z1g.sse.codesandbox.io/', // dogs
-  cache: new InMemoryCache()
-});
-
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );

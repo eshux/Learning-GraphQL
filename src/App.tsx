@@ -5,10 +5,21 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
 import Queries from './pages/Queries';
 import Header from './components/Header/Header';
 import Mutations from './pages/Mutations';
+
+const client = new ApolloClient({
+  uri: 'https://71z1g.sse.codesandbox.io/', // dogs
+  cache: new InMemoryCache()
+});
+
+const clientMutation = new ApolloClient({
+  uri: 'https://sxewr.sse.codesandbox.io/', // todo
+  cache: new InMemoryCache()
+});
 
 const App = () => (
   <Router>
@@ -18,10 +29,14 @@ const App = () => (
         <Home />
       </Route>
       <Route path="/queries">
-        <Queries />
+        <ApolloProvider client={client}>
+          <Queries />
+        </ApolloProvider>
       </Route>
       <Route path="/mutations">
-        <Mutations />
+        <ApolloProvider client={clientMutation}>
+          <Mutations />
+        </ApolloProvider>
       </Route>
     </Switch>
 

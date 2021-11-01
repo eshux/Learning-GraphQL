@@ -1,8 +1,8 @@
 import { NetworkStatus, useQuery } from '@apollo/client';
 import React, { FC } from 'react';
-import { GET_DOG_PHOTO } from '../../queries/dogPhoto';
-import { DogsType } from '../../types/Dogs';
-import Button from '../Button/Button';
+import { GET_DOG_PHOTO } from '../queries/getDogPhoto';
+import { DogsType } from '../types/Dogs';
+import Button from '../components/Button/Button';
 
 type Props = {
   breed: string;

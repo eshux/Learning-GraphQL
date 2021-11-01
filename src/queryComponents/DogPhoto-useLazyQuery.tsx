@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useLazyQuery } from '@apollo/client';
-import { GET_DOG_PHOTO } from '../../queries/dogPhoto';
-import Button from '../Button/Button';
+import { GET_DOG_PHOTO } from '../queries/getDogPhoto';
+import Button from '../components/Button/Button';
 
 type Props = {
   breed: string;
