@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.input {
+  padding: 8px 12px;
+  border: 3px solid $secondary-light;
+  font-size: 16px;
+  color: $secondary-dark;
+  background-color: $white;
+  letter-spacing: 1px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 500;
+}
+
+.noRightBorder {
+  border-right: none;
+}

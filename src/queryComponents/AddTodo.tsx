@@ -2,6 +2,8 @@ import React, { FC, useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_TODO } from '../queries/addTodo';
 import { GET_TODOS } from '../queries/getTodos';
+import Button from '../components/Button/Button';
+import CustomInput from '../components/CustomInput/CustomInput';
 
 type VarType = {
   variables: {
@@ -23,9 +25,6 @@ const AddTodo: FC = () => {
   });
   const [inputValue, setInputValue] = useState('');
 
-  if (loading) return <span>Submitting...</span>;
-  if (error) return <span>Submission error! {error.message}</span>;
-
   return (
     <div>
       <form
@@ -37,13 +36,17 @@ const AddTodo: FC = () => {
           }
         }}
       >
-        <input
+        <CustomInput
+          noRightBorder
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
           placeholder="Task to do"
         />
-        <button type="submit">Add</button>
+        <Button type="submit" filled>Add</Button>
       </form>
+      <div className="mb-16" />
+      {loading && <span>Submitting...</span>}
+      {error && <span>Submission error! {error.message}</span>}
     </div>
   );
 };

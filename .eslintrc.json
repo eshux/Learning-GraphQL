@@ -54,7 +54,8 @@
         "comma-dangle": "off",
         "react/jsx-one-expression-per-line": "off",
         "react/require-default-props": "off",
-        "object-curly-newline": "off"
+        "object-curly-newline": "off",
+        "react/button-has-type": "off"
     },
     "settings": {
         "import/resolver": {

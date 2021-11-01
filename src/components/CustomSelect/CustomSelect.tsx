@@ -11,11 +11,21 @@ type Props = {
   value: string;
 }
 
-// eslint-disable-next-line object-curly-newline
 const CustomSelect:FC<Props> = ({ options, onChange, placeholder, value }) => (
-  <select className={styles.select} onChange={onChange} placeholder={placeholder} value={value}>
+  <select
+    className={styles.select}
+    onChange={onChange}
+    placeholder={placeholder}
+    value={value}
+  >
     {options.map((item) => (
-      <option className={styles.option} key={item.id} value={item.value}>{item.value}</option>
+      <option
+        className={styles.option}
+        key={item.id}
+        value={item.value}
+      >
+        {item.value}
+      </option>
     ))}
   </select>
 );

@@ -4,13 +4,27 @@
   padding: 8px 12px;
   border: 3px solid $secondary-light;
   background-color: $white;
-  color: $secondary-dark;
+  color: $secondary-main;
   letter-spacing: 1px;
   transition: 0.3s;
   cursor: pointer;
+  font-size: 16px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 500;
 
   &:hover {
     background-color: $secondary-light;
+    color: $white;
+  }
+}
+
+.filled {
+  color: $white;
+  background-color: $secondary-light;
+
+  &:hover {
+    background-color: $secondary-main;
+    border-color: $secondary-main;
     color: $white;
   }
 }
