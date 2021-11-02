@@ -12,5 +12,10 @@ export const info = {
     'Refetching Queries (refetching the query after mutation - like we are doing here)',
     'Updating cache directly (more complex, but avoids refetching and making another call to server)'
   ],
-  refetchQueries: 'It is also possible to refetch all the queries whose cache have been modified with updateCache callback.'
+  refetchQueries: 'It is also possible to refetch all the queries whose cache have been modified with updateCache callback.',
+  subscription: 'useSubscription hook requires more complex configuration on both server and client side. Connection is being made with WebSocket.',
+  subscriptionPoints: [
+    'Small, incremental changes to large objects.',
+    'Low-latency, real-time updates. (e.g. receiving messages in chat or new comments about a blog article as soons as they are available)'
+  ]
 };

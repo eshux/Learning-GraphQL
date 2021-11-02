@@ -35,6 +35,13 @@ const Header:FC = () => (
       >
         Refetching
       </NavLink>
+      <NavLink
+        className={styles.navItem}
+        activeClassName={styles.active}
+        to="/subscriptions"
+      >
+        Subscriptions
+      </NavLink>
     </nav>
   </header>
 );
