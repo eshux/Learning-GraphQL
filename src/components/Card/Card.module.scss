@@ -1,8 +1,18 @@
 @import '../../styles/variables.scss';
 
 .card {
+  background-color: $white;
+  margin: 8px;
+  color: $secondary-dark;
+  border: 1px solid $secondary-light;
+}
+
+.content {
   padding: 8px 12px;
-  background-color: $secondary-light;
-  margin-bottom: 4px;
-  color: $white;
+  font-size: 14px;
+}
+
+.img {
+  width: 100%;
+  max-width: 300px;
 }

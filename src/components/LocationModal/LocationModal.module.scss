@@ -1,0 +1,53 @@
+@import '../../styles/variables.scss';
+
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $overlay-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  max-width: 400px;
+  min-height: 150px;
+  background-color: $white;
+  z-index: 1;
+  padding: 16px 16px 32px 32px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon {
+  width: 100%;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.title {
+  color: $secondary-main;
+  letter-spacing: 1px;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.text {
+  color: $gray;
+}

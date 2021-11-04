@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles/main.scss';
 import {
   BrowserRouter as Router,
@@ -12,6 +11,7 @@ import Header from './components/Header/Header';
 import Mutations from './pages/Mutations';
 import Refetching from './pages/Refetching';
 import Subscriptions from './pages/Subscriptions';
+import Fragments from './pages/Fragments';
 
 const client = new ApolloClient({
   uri: 'https://71z1g.sse.codesandbox.io/', // dogs
@@ -20,6 +20,11 @@ const client = new ApolloClient({
 
 const clientMutation = new ApolloClient({
   uri: 'https://sxewr.sse.codesandbox.io/', // todo
+  cache: new InMemoryCache()
+});
+
+const clientRnM = new ApolloClient({
+  uri: 'https://rickandmortyapi.com/graphql', // rick and morty
   cache: new InMemoryCache()
 });
 
@@ -47,6 +52,11 @@ const App = () => (
       </Route>
       <Route path="/subscriptions">
         <Subscriptions />
+      </Route>
+      <Route path="/fragments">
+        <ApolloProvider client={clientRnM}>
+          <Fragments />
+        </ApolloProvider>
       </Route>
     </Switch>
   </Router>

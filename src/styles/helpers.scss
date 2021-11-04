@@ -5,6 +5,10 @@
 	display: flex;
 }
 
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
 .flex-column {
   flex-direction: column;
 }
@@ -17,6 +21,11 @@
 .flex-justify-center {
 	display: flex;
 	justify-content: center;
+}
+
+.flex-justify-end {
+	display: flex;
+	justify-content: flex-end;
 }
 
 .flex-center {

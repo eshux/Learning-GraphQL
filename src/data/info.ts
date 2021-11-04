@@ -16,6 +16,7 @@ export const info = {
   subscription: 'useSubscription hook requires more complex configuration on both server and client side. Connection is being made with WebSocket.',
   subscriptionPoints: [
     'Small, incremental changes to large objects.',
-    'Low-latency, real-time updates. (e.g. receiving messages in chat or new comments about a blog article as soons as they are available)'
-  ]
+    'Low-latency, real-time updates. (e.g. receiving messages or new comments as soons as they are available)'
+  ],
+  fragments: 'Fragment is a piece of query that can be shared among other queries and mutations. Makes you not to repeat yourself.',
 };
