@@ -46,11 +46,13 @@ const GetAllCharacters: FC = () => {
           </Card>
         ))}
       </div>
-      <div className="flex-justify-end">
+      <div className="flex-justify-center">
         {data?.characters.info.prev && (
-        <Button onClick={() => update('prev')}>
-          PREV
-        </Button>
+          <div className="mr-8">
+            <Button onClick={() => update('prev')}>
+              PREV
+            </Button>
+          </div>
         )}
         {data?.characters.info.next && (
         <Button onClick={() => update('next')}>
