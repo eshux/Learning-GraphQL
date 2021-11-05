@@ -12,6 +12,7 @@ import Mutations from './pages/Mutations';
 import Refetching from './pages/Refetching';
 import Subscriptions from './pages/Subscriptions';
 import Fragments from './pages/Fragments';
+import Pagination from './pages/Pagination';
 
 const client = new ApolloClient({
   uri: 'https://71z1g.sse.codesandbox.io/', // dogs
@@ -59,6 +60,11 @@ const App = () => (
         </ApolloProvider>
       </Route>
     </Switch>
+    <Route path="/pagination">
+      <ApolloProvider client={clientRnM}>
+        <Pagination />
+      </ApolloProvider>
+    </Route>
   </Router>
 );
 

@@ -6,8 +6,6 @@ export interface Location {
 }
 
 interface Info {
-  count: string;
-  pages: string;
   next: string;
   prev: string;
 }
@@ -15,9 +13,9 @@ interface Info {
 export interface Character {
   id: number;
   name: string;
-  status: string;
-  species: string;
-  location: Location;
+  status?: string;
+  species?: string;
+  location?: Location;
   image: string;
 }
 

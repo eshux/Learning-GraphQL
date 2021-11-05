@@ -23,4 +23,8 @@ export const pages = [
     path: '/fragments',
     name: 'Fragments'
   },
+  {
+    path: '/pagination',
+    name: 'Pagination'
+  },
 ];

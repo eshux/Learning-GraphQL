@@ -32,7 +32,7 @@ const GetCharacter: FC = () => {
           </Card>
         )}
       </div>
-      { modal && data && (
+      { modal && data?.character.location && (
         <Modal
           onClose={() => setModal(false)}
           location={data.character.location}
